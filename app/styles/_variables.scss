@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,700%7CDroid+Serif:400,700,400italic,700italic);
+
+$susy: (
+  columns: 12,
+  container: 60em,
+  gutters: 1/4,
+  gutter-position: inside
+);
+
+$narrow: 400px;
+$small: 650px;
+$medium: 960px;
+$wide: 1200px;
+
+
+//Add Color Palette
+$darkBlue      : #4670A3;
+$lightBlue     : #7FB2F0;
+$darkGreen     : #95A34E;
+$lightGreen    : #AABD51;
+$wewak         : #F2A199;
+$light         : #FFF;
+$dark          : #424242;
+
+$backgroundColor    : $light;
+$typeDefault        : $dark;
+$navBackground      : $lightBlue;
+$navForeground      : $light;
+
+
+//Font variables
+$sansfont       : "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$seriffont       : "Droid Serif", "Georgia", "Times New Roman", "Palatino", serif;;
+
+$normal   : 400;
+$bold     : 700;
+
+$headFont   : $bold 1.5em/1.5em $sansfont;
+$mainFont   : $normal 1em/1.5em $seriffont;
+$headColor  : $darkBlue;

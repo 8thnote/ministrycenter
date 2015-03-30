@@ -5,27 +5,22 @@
 @import "bower_components/breakpoint/breakpoint/_grid.scss";
 // endbower
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
+//Core Partial
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-}
+//Import Modules
+@import "modules/nav";
+@import "modules/home";
+@import "modules/hours";
+@import "modules/questions";
+@import "modules/about";
+@import "modules/contact";
+@import "modules/footer";
+
+
 
 .browserupgrade {
   margin: 0.2em 0;

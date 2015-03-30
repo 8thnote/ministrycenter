@@ -1,0 +1,26 @@
+* {box-sizing:border-box;}
+
+body {
+  font: $mainFont;
+  background: $backgroundColor;
+  color: $typeDefault;
+}
+
+h1,h2,h3,h4,h5,h6 {
+ font: $headFont;
+ color: $headColor;
+}
+
+strong {
+  font-weight: $bold;
+}
+
+p {
+  font-weight: $normal;
+  margin-bottom: 10px;
+}
+
+/* heart bullets */
+.fa-ul.hearts i {
+  color: $wewak;
+}
