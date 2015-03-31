@@ -1,10 +1,31 @@
-#mainWrap {
-  @include container();
+body {
+  background: $light;
 }
+
+@include deviceBreakpoint(small) {
+  body {
+    padding: 0 2%;
+    background: darken($light, 20);
+  }
+  #mainWrap {
+  	@include container();
+  	background: $lightBlue;
+  }
   #wrapA {
-    /*need to find something other than breakpoint since I'm using libsass */
-      @include span(4 of 16);
+  	@include span(5 of 16);
   }
   #wrapB {
-      @include span(12 of 16);
+  	@include span(11 of 16);
+  	background: $light;
   }
+}
+
+@include deviceBreakpoint(medium) {
+  #wrapA {
+  	@include span(4 of 16);
+  }
+  #wrapB {
+  	@include span(12 of 16);
+  	background: $light;
+  }
+}

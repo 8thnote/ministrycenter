@@ -5,7 +5,6 @@
     "jquery": "~2.1.1",
     "modernizr": "~2.8.1",
     "susy": "~2.2.2",
-    "breakpoint": "~4.6.4",
     "font-awesome": "~4.3.0"
   }
 }
