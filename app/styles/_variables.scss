@@ -1,9 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,700%7CDroid+Serif:400,700,400italic,700italic);
 
 $susy: (
-  columns: 12,
+  columns: 16,
   container: 60em,
-  gutters: 1/4,
+  gutters: (1/4),
   gutter-position: inside
 );
 

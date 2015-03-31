@@ -1,0 +1,10 @@
+#mainWrap {
+  @include container();
+}
+  #wrapA {
+    /*need to find something other than breakpoint since I'm using libsass */
+      @include span(4 of 16);
+  }
+  #wrapB {
+      @include span(12 of 16);
+  }
