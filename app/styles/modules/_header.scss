@@ -1,0 +1,44 @@
+header {
+    position: relative;
+    background: url("../img/home-main.jpg") 50% 70% no-repeat;
+    background-size: 100% auto;
+    @include mobilePadding(10px);
+    
+    h1 {
+        width: 40%;
+        max-width: 160px;
+        margin: 0; padding: 0;
+        border: 5px solid $lightGreen;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        @extend %image-replace;
+        
+        a {
+            background-image: url("../img/logo.jpg");
+            display: block;
+            padding-top: 75%;
+            background-size: cover;
+            background-position: center;  /* Internet Explorer 7/8 */
+        }//a
+    }//h1
+    
+    #navToggle {
+        @include abs-pos(10px, 5%);
+        color: $dark;
+        text-decoration: none;
+        font-family: $sansfont;
+        font-weight: $bold;
+    }
+    @media (min-width: 30em) {
+        #navToggle {
+            background: $darkBlue;
+            padding: .2em .4em;
+            border-radius: 3px;
+            color: $light;
+            font-size: .8em;
+            text-shadow: 1px 1px 1px $dark;
+        }
+    }
+    
+    
+}//header

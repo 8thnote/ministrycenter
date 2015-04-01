@@ -1,6 +1,16 @@
+//hide elements on mobile here in an accessible manner
+//grouping selectors here since @extend doesn't work in media queries
+@include deviceBreakpoint(mobile) {
+  header p, #mainNav, #mainBanner {
+    @include visuallyhidden;
+  }//p
+}//mobile breakpoint
+
 body {
   background: $light;
 }
+
+#wrapB {padding: 1em $mobilePadding;}
 
 @include deviceBreakpoint(small) {
   body {

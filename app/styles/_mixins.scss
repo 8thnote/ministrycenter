@@ -1,3 +1,9 @@
+// Custom mixins at top
+@mixin mobilePadding($top: 0, $bottom: 0, $left: $mobilePadding, $right: $mobilePadding) {
+  padding: $top $right $bottom $left;
+}
+
+// General mixins
 %clearfix {
   *zoom: 1;
   &:before,
@@ -10,6 +16,7 @@
   } //after
 } //clearfix
 
+//BREAKPOINTS
 @mixin deviceBreakpoint($point) {
   @if $point == large {
     @media (min-width: 64.375em) { @content; }
@@ -19,6 +26,9 @@
   }
   @else if $point == small {
     @media (min-width: 37.5em)  { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 37.49em)  { @content; }
   }
 }
 
@@ -43,6 +53,16 @@
 
 //hides content while still being accessible
 %visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+@mixin visuallyhidden {
   margin: -1px;
   padding: 0;
   width: 1px;

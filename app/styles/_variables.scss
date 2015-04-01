@@ -35,6 +35,9 @@ $seriffont       : "Droid Serif", "Georgia", "Times New Roman", "Palatino", seri
 $normal   : 400;
 $bold     : 700;
 
-$headFont   : $bold 1.5em/1.5em $sansfont;
+$headFont   : $bold 1.5em/1.3em $sansfont;
 $mainFont   : $normal 1em/1.5em $seriffont;
 $headColor  : $darkBlue;
+
+//Layout
+$mobilePadding : 5%;
