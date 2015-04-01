@@ -3,7 +3,13 @@
 @include deviceBreakpoint(mobile) {
   header p, #mainNav, #mainBanner {
     @include visuallyhidden;
-  }//p
+  }
+  .desktop {display: none;}
+}//mobile breakpoint
+@include deviceBreakpoint(small) {
+  .mobile {
+    display: none;
+  }
 }//mobile breakpoint
 
 body {
@@ -23,19 +29,26 @@ body {
   }
   #wrapA {
   	@include span(5 of 16);
+  	padding: 0;
   }
   #wrapB {
   	@include span(11 of 16);
   	background: $light;
+  	padding: 0;
+  }
+  #mainContent {
+    padding: 1em 5%;
   }
 }
 
 @include deviceBreakpoint(medium) {
   #wrapA {
   	@include span(4 of 16);
+  	padding: 0;
   }
   #wrapB {
   	@include span(12 of 16);
   	background: $light;
+  	padding: 0;
   }
 }
