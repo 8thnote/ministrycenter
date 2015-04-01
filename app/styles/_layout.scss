@@ -15,7 +15,7 @@ body {
 @include deviceBreakpoint(small) {
   body {
     padding: 0 2%;
-    background: darken($light, 20);
+    background: darken($light, 20) url("../img/debut-dark.png") top left repeat;;
   }
   #mainWrap {
   	@include container();

@@ -1,14 +1,23 @@
 header {
     position: relative;
-    background: url("../img/home-main.jpg") 50% 70% no-repeat;
+    background: $darkBlue url("../img/home-main.jpg") 50% 70% no-repeat;
     background-size: 100% auto;
     @include mobilePadding(10px);
+    
+    .multiplebgs & {
+        background: url("../img/home-main.jpg"),
+                    url("../img/asfalt-light.png"),
+                    $darkBlue;
+        background-size: 100% auto, auto;
+        background-position: 50% 70%, top left;
+        background-repeat: no-repeat, repeat;
+    }
     
     h1 {
         width: 40%;
         max-width: 160px;
         margin: 0; padding: 0;
-        border: 5px solid $lightGreen;
+        border: 3px solid $lightGreen;
         border-radius: 5px;
         box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
         @extend %image-replace;
@@ -24,14 +33,14 @@ header {
     
     #navToggle {
         @include abs-pos(10px, 5%);
-        color: $dark;
+        color: darken($light, 10);
         text-decoration: none;
         font-family: $sansfont;
         font-weight: $bold;
     }
     @media (min-width: 30em) {
         #navToggle {
-            background: $darkBlue;
+            background: $darkBlue url("../img/asfalt-light.png") top left repeat;
             padding: .2em .4em;
             border-radius: 3px;
             color: $light;
