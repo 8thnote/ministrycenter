@@ -52,3 +52,55 @@ body {
   	padding: 0;
   }
 }
+
+.secondNav {
+  background: $darkBlue;
+  margin-left: -($mobilePadding + 1%);
+  margin-right: -($mobilePadding + 1%);
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @extend %clearfix;
+  }
+  li {
+   width: 50%;
+   float: left;
+   background-image: url("../img/nav-sprite.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% auto;
+   margin: 0; padding: 0;
+  }
+  li:nth-child(3) {
+    clear: left;
+  }
+  a {
+    display: block;
+    position: relative;
+    padding-bottom: 53%;
+  }
+  span {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $light;
+    text-transform: lowercase;
+    text-shadow: 0 -.0625em 0 $dark,
+                 .0625em 0 0 $dark,
+                 0 .0625em 0 $dark,
+                 -.0625em 0 0 $dark,
+                 .0625em .125em .125em rgba(0,0,0,0.5);
+  }
+  li.questions {
+    background-position: 0 33.3%;
+  }
+  li.about {
+    background-position: 0 66.6%;
+  }
+  li.contact {
+    background-position: 0 100%;
+  }
+}
