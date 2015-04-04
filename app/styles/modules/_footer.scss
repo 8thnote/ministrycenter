@@ -13,12 +13,22 @@ footer {
     
     @include deviceBreakpoint(small) {
         @extend %clearfix;
+        font-size: .7em;
+        line-height: 1.5;
         
         .copyright {
-            float: left;    
+            width: 50%;
+            float: left;
+            text-align: left;
         }
         .credit {
+            width: 50%;
             float: right;
+            text-align: right;
         }
+    }//small breakpoint
+    
+    @include deviceBreakpoint(medium) {
+        font-size: .8em;
     }
 }

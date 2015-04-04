@@ -1,6 +1,8 @@
 #bottomBanner {
-    margin-left: -($mobilePadding + 1%);
-    margin-right: -($mobilePadding + 1%);
+    @include deviceBreakpoint(mobile) {
+        margin-left: -($mobilePadding + 1%);
+        margin-right: -($mobilePadding + 1%);
+    }
     padding: 1em 0 .7em 0;
     
     background-image: url("../img/asfalt-light.png");
@@ -9,33 +11,37 @@
     
     @extend %clearfix;
     
+    $vPad: .7em;
+    
     .imgWrap {
         width: 50%;
-        padding-right: 1em;
+        padding-right: $vPad;//set above
         float: left;
         text-align: right;
     }
         img:not(.other) {
-            border: 3px solid $darkGreen;
+            border: 3px solid darken($light, 20);
             border-radius: 50%;
         }
     .cWrap {
-        padding-left: 1em;
+        width: 50%;
+        padding-left: $vPad;
         float: left;
     }
     h2 {
         margin: .7em 0 .2em 0;
         color: $light;
+        font-size: 1.3em;
     }
     p:first-of-type {
         margin-top: .4em;
     }
-    a {color: lighten($lightGreen, 15);
+    a {color: darken($light, 15);
         &:hover {
-            color: $lightGreen;
+            color: $light;
         }
         &:active {
-            color: lighten($lightGreen, 30);
+            color: $lightGreen;
         }
     }
 }
