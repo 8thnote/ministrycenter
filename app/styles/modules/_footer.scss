@@ -1,0 +1,24 @@
+footer {
+    padding: 1em $mobilePadding 0 $mobilePadding;
+    color: lighten($dark, 20);
+    text-align: center;
+    
+    .credit {
+        margin-bottom: .3em;
+    }
+    
+    a {
+        color: inherit;
+    }
+    
+    @include deviceBreakpoint(small) {
+        @extend %clearfix;
+        
+        .copyright {
+            float: left;    
+        }
+        .credit {
+            float: right;
+        }
+    }
+}

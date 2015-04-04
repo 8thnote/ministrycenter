@@ -3,35 +3,39 @@
     margin-right: -($mobilePadding + 1%);
     padding: 1em 0 .7em 0;
     
-    background: $darkBlue;
+    background-image: url("../img/asfalt-light.png");
+    background-color: $darkBlue;
     color: $light;
     
     @extend %clearfix;
     
-    .wrapper {
-        max-width: 20em;
-        margin: 0 auto;
-    }
-    
     .imgWrap {
         width: 50%;
+        padding-right: 1em;
         float: left;
-        text-align: center;
+        text-align: right;
     }
         img:not(.other) {
             border: 3px solid $darkGreen;
-            border-radius: $radiusDefault;
+            border-radius: 50%;
         }
     .cWrap {
         padding-left: 1em;
         float: left;
     }
     h2 {
-        margin: .3em 0 .2em 0;
+        margin: .7em 0 .2em 0;
         color: $light;
     }
     p:first-of-type {
         margin-top: .4em;
     }
-    a {color: $light;}
+    a {color: lighten($lightGreen, 15);
+        &:hover {
+            color: $lightGreen;
+        }
+        &:active {
+            color: lighten($lightGreen, 30);
+        }
+    }
 }

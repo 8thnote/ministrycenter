@@ -17,14 +17,27 @@ h1.top, h2.top, h3.top {
   margin-top: .4em;
 }
 
-strong {
-  font-weight: $bold;
-}
-
 p {
   font-weight: $normal;
   margin-bottom: .8em;
 }
+
+a {
+  color: $darkGreen;
+  
+  &:hover {
+    color: darken($darkGreen, 10);
+  }
+  &:active {
+    color: lighten($darkGreen, 10);
+  }
+}
+
+strong {
+  font-weight: $bold;
+}
+
+
 
 /*tel link*/
 a[href^=tel] {
