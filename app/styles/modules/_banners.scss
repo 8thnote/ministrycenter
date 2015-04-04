@@ -1,0 +1,37 @@
+#bottomBanner {
+    margin-left: -($mobilePadding + 1%);
+    margin-right: -($mobilePadding + 1%);
+    padding: 1em 0 .7em 0;
+    
+    background: $darkBlue;
+    color: $light;
+    
+    @extend %clearfix;
+    
+    .wrapper {
+        max-width: 20em;
+        margin: 0 auto;
+    }
+    
+    .imgWrap {
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+        img:not(.other) {
+            border: 3px solid $darkGreen;
+            border-radius: $radiusDefault;
+        }
+    .cWrap {
+        padding-left: 1em;
+        float: left;
+    }
+    h2 {
+        margin: .3em 0 .2em 0;
+        color: $light;
+    }
+    p:first-of-type {
+        margin-top: .4em;
+    }
+    a {color: $light;}
+}

@@ -1,11 +1,12 @@
 //hide elements on mobile here in an accessible manner
 //grouping selectors here since @extend doesn't work in media queries
 @include deviceBreakpoint(mobile) {
-  header p, #mainNav, #mainBanner {
+  .mHide, header p, #mainNav, #mainBanner {
     @include visuallyhidden;
   }
   .desktop {display: none;}
 }//mobile breakpoint
+
 @include deviceBreakpoint(small) {
   .mobile {
     display: none;
@@ -14,6 +15,7 @@
 
 body {
   background: $light;
+  overflow-x: hidden;
 }
 
 #wrapB {padding: 1em $mobilePadding;}
@@ -21,7 +23,7 @@ body {
 @include deviceBreakpoint(small) {
   body {
     padding: 0 2%;
-    background: darken($light, 20) url("../img/debut-dark.png") top left repeat;;
+    background: darken($light, 20) url("../img/debut-dark.png") top left repeat;
   }
   #mainWrap {
   	@include container();
@@ -39,7 +41,7 @@ body {
   #mainContent {
     padding: 1em 5%;
   }
-}
+}//small breakpoint
 
 @include deviceBreakpoint(medium) {
   #wrapA {
@@ -51,12 +53,16 @@ body {
   	background: $light;
   	padding: 0;
   }
-}
+}//medium breakpoint
 
+
+//NEED TO REFACTOR THIS
 .secondNav {
   background: $darkBlue;
   margin-left: -($mobilePadding + 1%);
   margin-right: -($mobilePadding + 1%);
+  margin-bottom: 2em;
+  
   ul {
     list-style-type: none;
     margin: 0;
