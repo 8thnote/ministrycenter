@@ -12,6 +12,7 @@ header {
         background-position: 50% 70%, top left;
         background-repeat: no-repeat, repeat;
         
+        //this media param pulls in a string
         @media (#{$wideMobile}) {
             background: url("../img/home-main.jpg");
             background-size: cover;
@@ -21,6 +22,15 @@ header {
             box-shadow: inset 0 -3px 7px rgba(0,0,0,0.5); 
         }//breakpoint
     }//.multiplebgs header
+    
+    @include deviceBreakpoint(small) {
+        #wrapA & {
+            padding: 0;
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+    }//small breakpoint
     
     h1 {
         width: 40%;
@@ -32,7 +42,21 @@ header {
             border-radius: 10px;
         }
         box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-        @extend %image-replace;
+        
+        @include deviceBreakpoint(mobile) {
+          @include image-replace;  
+        }//mobile breakpoint
+        
+        @include deviceBreakpoint(small) {
+            width: auto;
+            padding: 1em 8% 0 8%;
+            border: none;
+            box-shadow: none;
+            
+            font-size: 2.7em;
+            font-weight: $normal;
+            line-height: 1.2;
+        }//small breakpoint
         
         a {
             background-image: url("../img/logo.jpg");
@@ -40,25 +64,48 @@ header {
             padding-top: 75%;
             background-size: cover;
             background-position: center;  /* Internet Explorer 7/8 */
+            
+            @include deviceBreakpoint(small) {
+                background: none;
+                padding: 0;
+                color: $light;
+                text-decoration: none;
+                
+                &:hover {
+                    color: lighten($lightGreen, 40);
+                }
+                
+                span {
+                    display: block;
+                    font-size: .7em;
+                    font-style: italic;
+                    text-transform: lowercase;
+                }
+            }// small breakpoint
         }//a
     }//h1
+    
+    p {
+        padding: 0 5% 0 8%;
+        color: $light;
+        font-size: .8em;
+        font-style: italic;
+    }
     
     #navToggle {
         @include abs-pos(10px, 5%);
         color: darken($light, 10);
         text-decoration: none;
         font-family: $sansfont;
-    }
-    @media (min-width: 29em) {
-        #navToggle {
+    
+        @media (min-width: 29em) {
             background: $darkBlue url("../img/asfalt-light.png") top left repeat;
             padding: .2em .4em;
             border-radius: 3px;
             color: $light;
             font-size: .8em;
             text-shadow: 1px 1px 1px $dark;
-        }
+        }//29em breakpoint
     }
-    
     
 }//header
