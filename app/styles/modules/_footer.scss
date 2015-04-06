@@ -1,5 +1,10 @@
 footer {
     padding: 1em $mobilePadding 0 $mobilePadding;
+    @include deviceBreakpoint(small) {
+        padding-top: 0;
+        background: darken($darkBlue,20);
+        color: darken($light, 20);
+    }
     color: lighten($dark, 20);
     text-align: center;
     

@@ -92,6 +92,45 @@ header {
         font-style: italic;
     }
     
+    @include deviceBreakpoint(small) {
+        .sun { 
+        	position: absolute; 
+        	width: 490px; 
+        	height: 490px; 
+        	top: -245px; right: -245px;
+            
+            .core { 
+            	width: 150px; 
+            	height: 150px; 
+            	background-color: #EDED58; 
+            	display: block;
+            	border-radius: 50%;
+            	position: absolute; 
+            	top: 174px; left: 170px;
+            }
+            .rays	{
+            	background: url("../img/rays.png") 0 0 no-repeat; 
+            	position: absolute; 
+            	top: 0; 
+            	left: 0; 
+            	width: 490px; 
+            	height: 490px;
+            	z-index: -1;
+            	
+            	/* microsoft ie */
+            	animation-name: spin; 
+            	animation-duration: 40000ms; /* 40 seconds */
+            	animation-iteration-count: infinite; 
+            	animation-timing-function: linear;
+            	
+            	&:hover {
+            	/* animation-duration: 10000ms; 10 seconds - speed it up on hover! */
+            	/* resets the position though!  sucks */
+                }
+            }//rays
+        }//sun
+    }//small breakpoint
+    
     #navToggle {
         @include abs-pos(10px, 5%);
         color: darken($light, 10);

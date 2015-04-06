@@ -51,6 +51,12 @@ a[href^=tel] {
 .fa-ul.hearts i {
   color: darken($wewak, 5);
 }
+.fa-li {
+  line-height: 1.3;
+  @include deviceBreakpoint(medium) {
+    line-height: 1.45;
+  }
+}
 
 /* style classes */
 .callout {
