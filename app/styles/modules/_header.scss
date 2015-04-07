@@ -25,6 +25,8 @@ header {
     }//.multiplebgs header
     
     @include deviceBreakpoint(small) {
+        position: relative;
+        
         #wrapA & {
             margin-bottom: 2em;
             padding: 0;
@@ -35,6 +37,7 @@ header {
     }//small breakpoint
     
     h1 {
+        position: relative;
         width: 40%;
         max-width: 160px;
         margin: 0; padding: 0;
@@ -54,7 +57,6 @@ header {
             padding: 1em 8% 0 8%;
             border: none;
             box-shadow: none;
-            
             font-size: 2.7em;
             font-weight: $normal;
             line-height: 1.2;
@@ -68,13 +70,16 @@ header {
             background-position: center;  /* Internet Explorer 7/8 */
             
             @include deviceBreakpoint(small) {
+                position: relative;
                 background: none;
                 padding: 0;
-                color: $light;
+                color: darken($light, 7);
                 text-decoration: none;
+                transition: .3s color;
+                z-index: 2;
                 
                 &:hover {
-                    color: lighten($lightGreen, 40);
+                    color: $light;
                 }
                 
                 span {
@@ -90,7 +95,7 @@ header {
     p {
         margin-top: 1.3em;
         padding: 0 5% 0 8%;
-        color: $light;
+        color: darken($light, 20);
         font-size: .8em;
         font-style: italic;
         
