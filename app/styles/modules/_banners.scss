@@ -13,17 +13,18 @@
             }
             position: absolute;
             left: 0; bottom: 0;
-            background: rgba(98, 116, 30, 0.8);
+            background: rgba(120, 137, 53, 0.8);
             color: #fff;
-            font-size: .8em;
+            font-size: .7em;
             @include deviceBreakpoint(medium) {
-                font-size: .9em;
+                font-size: .8em;
             }
             @include deviceBreakpoint(large) {
-                font-size: 1em;
+                font-size: .9em;
             }
             font-style: italic;
             line-height: 1.5;
+            letter-spacing: .05em;
         }
     }//small breakpoint
 }//mainBanner
@@ -52,6 +53,9 @@
             width: 30%;
             margin-right: 3%;
         }
+        @include deviceBreakpoint(medium) {
+            width: 20%;
+        }
         padding-right: $vPad;//set above
         float: left;
         text-align: right;
@@ -59,13 +63,17 @@
         img:not(.other) {
             border: 3px solid darken($light, 20);
             border-radius: 50%;
+            max-width: 100%;
+            @include deviceBreakpoint(mobile) {
+                height: 75px;
+            }
         }
     .cWrap {
         width: 50%;
+        padding-left: $vPad;
         @include deviceBreakpoint(small) {
             width: 65%;
         }
-        padding-left: $vPad;
         float: left;
     }
     h2 {
@@ -74,7 +82,10 @@
         font-size: 1.3em;
     }
     p:first-of-type {
-        margin-top: .4em;
+        margin-top: .2em;
+        @include deviceBreakpoint(small) {
+            margin-top: .4em;
+        }
     }
     a {color: darken($light, 15);
         &:hover {

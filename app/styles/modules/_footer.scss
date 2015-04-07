@@ -1,5 +1,5 @@
 footer {
-    padding: 1em $mobilePadding 0 $mobilePadding;
+    padding: 1em 3% 0 3%;
     @include deviceBreakpoint(small) {
         padding-top: 0;
         background: darken($darkBlue,20);

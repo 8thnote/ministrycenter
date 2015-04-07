@@ -25,6 +25,7 @@ header {
     
     @include deviceBreakpoint(small) {
         #wrapA & {
+            margin-bottom: 2em;
             padding: 0;
             background: none;
             border: none;
