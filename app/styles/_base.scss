@@ -54,11 +54,12 @@ a[href^=tel] {
 /* heart bullets */
 .fa-ul.hearts i {
   color: darken($wewak, 5);
+  font-size: .5em;
 }
 .fa-li {
-  line-height: 1.2;
+  line-height: 2.4;
   @include deviceBreakpoint(medium) {
-    line-height: 1.35;
+    line-height: 2.8;
   }
 }
 

@@ -4,6 +4,7 @@ header {
     background-size: 100% auto;
     @include mobilePadding(10px, 5px);
     
+    
     .multiplebgs & {
         background: url("../img/home-main.jpg"),
                     url("../img/asfalt-light.png"),
@@ -87,10 +88,16 @@ header {
     }//h1
     
     p {
+        margin-top: 1.3em;
         padding: 0 5% 0 8%;
         color: $light;
         font-size: .8em;
         font-style: italic;
+        
+        @include deviceBreakpoint(large) {
+            margin-top: .9em;
+            font-size: 1em;
+        }
     }
     
     @include deviceBreakpoint(small) {
@@ -98,19 +105,20 @@ header {
         	position: absolute; 
         	width: 490px; 
         	height: 490px; 
-        	top: -245px; right: -245px;
+        	top: -227px; right: -191px;
             
             .core { 
-            	width: 150px; 
-            	height: 150px; 
-            	background-color: #EDED58; 
+            	width: 80px; 
+            	height: 80px; 
+            	background-color: #E8E87A; 
             	display: block;
             	border-radius: 50%;
             	position: absolute; 
-            	top: 174px; left: 170px;
+            	top: 205px; left: 205px;
             }
             .rays	{
-            	background: url("../img/rays.png") 0 0 no-repeat; 
+            	background: url("../img/rays.png") 0 0 no-repeat;
+            	opacity: .3;
             	position: absolute; 
             	top: 0; 
             	left: 0; 
@@ -120,7 +128,7 @@ header {
             	
             	/* microsoft ie */
             	animation-name: spin; 
-            	animation-duration: 40000ms; /* 40 seconds */
+            	animation-duration: 100000ms; /* 40 seconds */
             	animation-iteration-count: infinite; 
             	animation-timing-function: linear;
             	
