@@ -1,6 +1,6 @@
 #mainBanner {
     @include deviceBreakpoint(small) {
-        height: 11em;
+        height: 12em;
         position: relative;
         background: url("../img/home-main.jpg") 50% 50% no-repeat;
         background-size: cover;
