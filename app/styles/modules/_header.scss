@@ -26,8 +26,11 @@ header {
     
     @include deviceBreakpoint(small) {
         #wrapA & {
-            margin-bottom: 3em;
+            margin-bottom: 2em;
             padding: 2.4em 8% 0 8%;
+            @include deviceBreakpoint(large) {
+                padding-left: 18%;
+            }
             background: none;
             border: none;
             box-shadow: none;
@@ -52,20 +55,24 @@ header {
         @include deviceBreakpoint(small) {
             border: none;
             box-shadow: none;
+            padding-left: .2em;
+            border-left: 1px solid $lightGreen;
+            border-radius: 0;
             
-            font-size: 2.7em;
+            font-size: 2.2em;
             font-weight: $normal;
-            line-height: 1.2;
+            line-height: 1;
+            text-shadow: 1px 1px 1px rgba(0,0,0, .2);
             
-            &:after {
+            /* &:after {
                 content: " ";
                 display: block;
-                width: 30%;
+                width: 50%;
                 height: 2px;
                 margin: .7em 0 0 10%;
-                background-image: linear-gradient(to left, rgba(255,255,255,.2), rgba(255,255,255,.7));
+                background-image: linear-gradient(to left, rgba($lightGreenFaded,.2), rgba($lightGreenFaded,.7));
                 border-radius: 1px;
-            }
+            } */
         }//small breakpoint for h1
         
         a {
@@ -78,8 +85,9 @@ header {
             @include deviceBreakpoint(small) {
                 background: none;
                 padding: 0;
-                color: $light;
+                color: #F0E7DA;
                 text-decoration: none;
+                transition: .3s color;
                 
                 &:hover {
                     color: lighten($lightGreen, 40);
@@ -87,7 +95,8 @@ header {
                 
                 span {
                     display: block;
-                    font-size: .7em;
+                    margin-bottom: .2em;
+                    font-size: .53em;
                     font-style: italic;
                     text-transform: lowercase;
                 }
@@ -95,18 +104,18 @@ header {
         }//a
     }//h1
     
-    /* p {
+    p {
         margin-top: 1.3em;
-        padding: 0 5% 0 8%;
-        color: darken($light, 10);
-        font-size: .7em;
+        padding: 0 5% 0 .3em;
+        color: #F0E7DA;
+        font-size: .6em;
         font-style: italic;
         
         @include deviceBreakpoint(large) {
             margin-top: .9em;
-            font-size: .8em;
+            font-size: .7em;
         }
-    } */
+    }
     
     @include deviceBreakpoint(small) {
         .sun { 
@@ -114,6 +123,7 @@ header {
         	width: 490px; 
         	height: 490px; 
         	top: -227px; right: -191px;
+        	z-index: -1;
             
             .core { 
             	width: 80px; 
@@ -132,7 +142,6 @@ header {
             	left: 0; 
             	width: 490px; 
             	height: 490px;
-            	z-index: -1;
             	
             	/* microsoft ie */
             	animation-name: spin; 

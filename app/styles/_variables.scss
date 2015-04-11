@@ -23,9 +23,10 @@ $light         : #FFF;
 $dark          : #424242;
 
 $darkBlueFaded: desaturate(lighten($darkBlue, 10), 10);
+$lightGreenFaded: desaturate(lighten($lightGreen, 30), 20);
 
 $backgroundColor    : $light;
-$typeDefault        : $dark;
+$typeDefault        : lighten($dark, 10);
 $navBackground      : $lightBlue;
 $navForeground      : $light;
 

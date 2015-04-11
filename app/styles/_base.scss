@@ -69,7 +69,7 @@ a[href^=tel] {
       content: "\f18e";
       position: absolute;
       left: 0;
-      color: $darkBlueFaded;
+      color: rgb(153, 139, 118);
     }
   }
 }
@@ -80,9 +80,7 @@ a[href^=tel] {
   border-radius: 5px;
   background: $darkGreen;
   color: $light;
-  font-family: $sansfont2;
-  font-size: .9em;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
   .callout em {
     font-style: normal;

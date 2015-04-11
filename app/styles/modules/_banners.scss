@@ -1,6 +1,6 @@
 #mainBanner {
     @include deviceBreakpoint(small) {
-        height: 14.3em;
+        height: 11em;
         position: relative;
         background: url("../img/home-main.jpg") 50% 50% no-repeat;
         background-size: cover;
@@ -14,8 +14,8 @@
             }
             position: absolute;
             left: 0; bottom: 0;
-            background: rgba(119, 107, 89, 0.9);
-            color: darken($light, 10);
+            background: rgba(153, 139, 118, 0.9);
+            color: darken($light, 5);
             font-size: .5em;
             @include deviceBreakpoint(medium) {
                 font-size: .6em;
