@@ -2,7 +2,7 @@ header {
     position: relative;
     background: $darkBlue url("../img/home-main.jpg") 50% 70% no-repeat;
     background-size: 100% auto;
-    @include mobilePadding(10px, 5px);
+    @include mobilePadding(10px, 5px);//margin below in small breakpoint
     
     
     .multiplebgs & {
@@ -25,21 +25,16 @@ header {
     }//.multiplebgs header
     
     @include deviceBreakpoint(small) {
-        position: relative;
-        
         #wrapA & {
-            margin-bottom: 2em;
-            padding: 0;
+            margin-bottom: 3em;
+            padding: 2.4em 8% 0 8%;
             background: none;
             border: none;
             box-shadow: none;
         }
-    }//small breakpoint
+    }//small breakpoint for header
     
     h1 {
-        position: relative;
-        width: 40%;
-        max-width: 160px;
         margin: 0; padding: 0;
         border: 3px solid $lightGreen;
         border-radius: 5px;
@@ -49,18 +44,29 @@ header {
         box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
         
         @include deviceBreakpoint(mobile) {
-          @include image-replace;  
+          @include image-replace;
+          width: 40%;
+          max-width: 160px;
         }//mobile breakpoint
         
         @include deviceBreakpoint(small) {
-            width: auto;
-            padding: 1em 8% 0 8%;
             border: none;
             box-shadow: none;
+            
             font-size: 2.7em;
             font-weight: $normal;
             line-height: 1.2;
-        }//small breakpoint
+            
+            &:after {
+                content: " ";
+                display: block;
+                width: 30%;
+                height: 2px;
+                margin: .7em 0 0 10%;
+                background-image: linear-gradient(to left, rgba(255,255,255,.2), rgba(255,255,255,.7));
+                border-radius: 1px;
+            }
+        }//small breakpoint for h1
         
         a {
             background-image: url("../img/logo.jpg");
@@ -70,16 +76,13 @@ header {
             background-position: center;  /* Internet Explorer 7/8 */
             
             @include deviceBreakpoint(small) {
-                position: relative;
                 background: none;
                 padding: 0;
-                color: darken($light, 7);
+                color: $light;
                 text-decoration: none;
-                transition: .3s color;
-                z-index: 2;
                 
                 &:hover {
-                    color: $light;
+                    color: lighten($lightGreen, 40);
                 }
                 
                 span {
@@ -92,18 +95,18 @@ header {
         }//a
     }//h1
     
-    p {
+    /* p {
         margin-top: 1.3em;
         padding: 0 5% 0 8%;
-        color: darken($light, 20);
-        font-size: .8em;
+        color: darken($light, 10);
+        font-size: .7em;
         font-style: italic;
         
         @include deviceBreakpoint(large) {
             margin-top: .9em;
-            font-size: 1em;
+            font-size: .8em;
         }
-    }
+    } */
     
     @include deviceBreakpoint(small) {
         .sun { 
@@ -123,7 +126,7 @@ header {
             }
             .rays	{
             	background: url("../img/rays.png") 0 0 no-repeat;
-            	opacity: .3;
+            	opacity: .5;
             	position: absolute; 
             	top: 0; 
             	left: 0; 

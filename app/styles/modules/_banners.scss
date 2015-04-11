@@ -3,6 +3,7 @@
         height: 14.3em;
         position: relative;
         background: url("../img/home-main.jpg") 50% 50% no-repeat;
+        background-size: cover;
         
         p {
             width: 100%;
@@ -13,18 +14,18 @@
             }
             position: absolute;
             left: 0; bottom: 0;
-            background: rgba(120, 137, 53, 0.8);
-            color: #fff;
-            font-size: .7em;
+            background: rgba(119, 107, 89, 0.9);
+            color: darken($light, 10);
+            font-size: .5em;
             @include deviceBreakpoint(medium) {
-                font-size: .8em;
+                font-size: .6em;
             }
             @include deviceBreakpoint(large) {
-                font-size: .9em;
+                font-size: .7em;
             }
-            font-style: italic;
+            font-family: $sansfont2;
             line-height: 1.5;
-            letter-spacing: .05em;
+            letter-spacing: .07em;
         }
     }//small breakpoint
 }//mainBanner

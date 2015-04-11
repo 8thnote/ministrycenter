@@ -23,12 +23,12 @@ body {
 @include deviceBreakpoint(small) {
   body {
     padding: 0 2%;
-    background: darken($light, 20) url("../img/debut-dark.png") top left repeat;
+    background: #FADBB3 url("../img/debut-dark.png") top left repeat;
   }
   #mainWrap {
   	@include container();
-  	position: relative;
-  	background: rgba(73, 155, 255, 0.5);
+  	background: rgba(73, 155, 255, 0.7);
+  	border-left: 2px solid $lightBlue;
   }
   #wrapA {
   	@include span(5 of 16);
@@ -36,11 +36,10 @@ body {
   }
   #wrapB {
   	@include span(11 of 16);
-  	position: relative;
-  	padding: 0;
   	background: #fff;
-  	box-shadow: -.3125em 0 .5em rgba(0,0,0,0.2),
-  	            .3125em 0 .5em rgba(0,0,0,0.2);
+  	padding: 0;
+  	box-shadow: -.2125em 0 .3em rgba(0,0,0,0.1),
+  	            .2125em 0 .3em rgba(0,0,0,0.1);
     z-index: 10;
   }
   #mainContent {
@@ -66,6 +65,15 @@ body {
 }//medium breakpoint
 
 @include deviceBreakpoint(large) {
+  body {
+    background: url("../img/sunrise.jpg"), 
+                url("../img/debut-dark.png"),
+                #FADBB3;
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 0;
+    background-size: 100% auto, auto;
+  }
+  
   h1.top {
     margin: .4em 0 .6em 0;
     font-size: 2.8em;
@@ -73,3 +81,9 @@ body {
     line-height: 1.2;
   }
 }//large breakpoint
+
+@media (min-width: 72em) {
+  body {
+    font-size: 1.2em;
+  }
+}

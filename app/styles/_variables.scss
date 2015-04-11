@@ -22,6 +22,8 @@ $wewak         : #F2A199;
 $light         : #FFF;
 $dark          : #424242;
 
+$darkBlueFaded: desaturate(lighten($darkBlue, 10), 10);
+
 $backgroundColor    : $light;
 $typeDefault        : $dark;
 $navBackground      : $lightBlue;
@@ -29,8 +31,9 @@ $navForeground      : $light;
 
 
 //Font variables
-$sansfont       : "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$seriffont       : "Droid Serif", "Georgia", "Times New Roman", "Palatino", serif;;
+$sansfont        : "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sansfont2       : Verdana, Arial, sans-serif;  
+$seriffont       : "Droid Serif", "Georgia", "Times New Roman", "Palatino", serif;
 
 $normal   : 400;
 $bold     : 700;
