@@ -19,7 +19,10 @@
     @extend %clearfix;
   }
   &.stacked ul {
-    padding: 0 8%;
+    padding: 0 12%;
+    @include deviceBreakpoint(large) {
+      padding: 0 13%;
+    }
   }
   
   li {
@@ -58,9 +61,10 @@
     text-align: center;
     color: $light;
     font-family: $sansfont2;
-    font-size: .9em;
+    font-size: .8em;
     transition: $animSpeed color;
     text-transform: lowercase;
+    line-height: 1.5;
     @include textStroke($strokeColor: darken($darkBlue,10), $shadowSize: .06em .08em .2em);
   }
     a:hover span {
@@ -91,16 +95,15 @@
   a:after {
     content: " ";
     @extend %absFull;
-    background-color: rgba(110, 175, 255, 0);
     background-clip: padding-box;
-    transition: $animSpeed background-color;
+    transition: $animSpeed border;
   }
     &.stacked a:after {
-      border: 2px solid $lightGreen;
+      border: 2px solid $brown;
       border-radius: $radiusDefault;
     }
-    a:hover:after {
-      background-color: rgba(127, 178, 240, 0);
+    &.stacked a:hover:after {
+      border: 2px solid $lightGreen;
     }
   
   

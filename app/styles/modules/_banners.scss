@@ -14,7 +14,7 @@
             }
             position: absolute;
             left: 0; bottom: 0;
-            background: rgba(153, 139, 118, 0.9);
+            background: rgba($brown, 0.9);
             color: darken($light, 5);
             font-size: .5em;
             @include deviceBreakpoint(medium) {

@@ -27,7 +27,7 @@ header {
     @include deviceBreakpoint(small) {
         #wrapA & {
             margin-bottom: 3em;
-            padding: 2.4em 8% 0 8%;
+            padding: 2.4em 8% 0 12%;
             @include deviceBreakpoint(large) {
                 padding-left: 18%;
             }
@@ -85,7 +85,7 @@ header {
             @include deviceBreakpoint(small) {
                 background: none;
                 padding: 0;
-                color: #F0E7DA;
+                color: lighten($brown, 35);
                 text-decoration: none;
                 transition: .3s color;
                 
@@ -107,7 +107,7 @@ header {
     p {
         margin-top: 1.3em;
         padding: 0 5% 0 .3em;
-        color: #F0E7DA;
+        color: lighten($brown, 33);
         font-size: .6em;
         font-style: italic;
         
