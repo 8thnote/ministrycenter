@@ -45,18 +45,18 @@
 $(document).ready(function() {
     // Get the em value of the #mainWrap element
     // Still working on this
-    var mainWrapWidth = getEmPixels(document.getElementById('mainWrap'));
+    var mainWrapWidth = getEmPixels(document.getElementById('wrapA'));
     console.log(mainWrapWidth);
     
     if (!Modernizr.touch) {
         // init controller
         var controller = new ScrollMagic.Controller();
-        
+
         // create a scene
         new ScrollMagic.Scene({
                 offset: 220      // start this scene after scrolling for 50px
             })
-            .setPin("nav")
+            .setPin("#mainNav")
             .setClassToggle("body", "pinned")// pins the element for the the scene's duration
             .addTo(controller); // assign the scene to the controller
     }
