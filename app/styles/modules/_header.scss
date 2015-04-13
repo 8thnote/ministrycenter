@@ -1,28 +1,12 @@
 header {
     position: relative;
-    background: $darkBlue url("../img/home-main.jpg") 50% 70% no-repeat;
-    background-size: 100% auto;
+    background: $brown url("../img/home-main.jpg") 50% 70% no-repeat;
+    background-size: cover;
     @include mobilePadding(10px, 5px);//margin below in small breakpoint
-    
-    
-    .multiplebgs & {
-        background: url("../img/home-main.jpg"),
-                    url("../img/asfalt-light.png"),
-                    darken($darkBlue, 10);
-        background-size: 100% auto, auto;
-        background-position: 50% 70%, top left;
-        background-repeat: no-repeat, repeat;
-        
-        //this media param pulls in a string
-        @media (#{$wideMobile}) {
-            background: url("../img/home-main.jpg");
-            background-size: cover;
-            background-position: 50% 0;
-            background-repeat: no-repeat;
-            border-bottom: 3px solid darken($light, 30);
-            box-shadow: inset 0 -3px 7px rgba(0,0,0,0.5); 
-        }//breakpoint
-    }//.multiplebgs header
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid lighten($brown, 10);
+    box-shadow: inset 0 -3px 7px rgba(0,0,0,0.5);
     
     @include deviceBreakpoint(small) {
         #wrapA & {
@@ -38,21 +22,26 @@ header {
     }//small breakpoint for header
     
     h1 {
-        margin: 0; padding: 0;
-        border: 3px solid $lightGreen;
+        display: inline-block;
+        margin: .15em 0; padding: .3em .3em .2em .3em;
         border-radius: 5px;
+        background: rgba(darken($lightBlue, 10), .8);
+        font-size: 2em;
+        font-weight: $normal;
+        line-height: 1;
+        text-shadow: 1px 1px 1px rgba(0,0,0, .2);
+        
         @media (#{$wideMobile}) {
             border-radius: 10px;
+            font-size: 2.4em;
         }
-        box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-        
-        @include deviceBreakpoint(mobile) {
-          @include image-replace;
-          width: 40%;
-          max-width: 160px;
-        }//mobile breakpoint
         
         @include deviceBreakpoint(small) {
+            background: none;
+            width: 100%;
+            display: block;
+            margin: 0; padding: 0;
+            
             border: none;
             box-shadow: none;
             padding-left: .2em;
@@ -60,9 +49,6 @@ header {
             border-radius: 0;
             
             font-size: 2.2em;
-            font-weight: $normal;
-            line-height: 1;
-            text-shadow: 1px 1px 1px rgba(0,0,0, .2);
             
             /* &:after {
                 content: " ";
@@ -76,31 +62,25 @@ header {
         }//small breakpoint for h1
         
         a {
-            background-image: url("../img/logo.jpg");
-            display: block;
-            padding-top: 75%;
-            background-size: cover;
-            background-position: center;  /* Internet Explorer 7/8 */
+            padding: 0;
+            color: lighten($brown, 35);
+            text-decoration: none;
+            transition: .3s color;
             
-            @include deviceBreakpoint(small) {
-                background: none;
-                padding: 0;
-                color: lighten($brown, 35);
-                text-decoration: none;
-                transition: .3s color;
-                
-                &:hover {
-                    color: lighten($lightGreen, 40);
-                }
-                
-                span {
-                    display: block;
-                    margin-bottom: .2em;
-                    font-size: .53em;
-                    font-style: italic;
-                    text-transform: lowercase;
-                }
-            }// small breakpoint
+            &:hover {
+                color: lighten($lightGreen, 40);
+            }
+            
+            span {
+                display: block;
+            }
+            
+            .mc-small {
+                margin-bottom: .2em;
+                font-size: .53em;
+                font-style: italic;
+                text-transform: lowercase;
+            }
         }//a
     }//h1
     
@@ -158,19 +138,16 @@ header {
     }//small breakpoint
     
     #navToggle {
-        @include abs-pos(10px, 5%);
+        @include abs-pos(auto, 5%, 1.5em, auto);
         color: darken($light, 10);
         text-decoration: none;
-        font-family: $sansfont;
-    
-        @media (min-width: 29em) {
-            background: $darkBlue url("../img/asfalt-light.png") top left repeat;
-            padding: .2em .4em;
-            border-radius: 3px;
-            color: $light;
-            font-size: .8em;
-            text-shadow: 1px 1px 1px $dark;
-        }//29em breakpoint
+        font-family: $sansfont2;
+        background: rgba($dark, .1);
+        padding: .2em .4em;
+        border-radius: 3px;
+        color: $darkBlue;
+        font-size: .8em;
+        //text-shadow: 1px 1px 1px $dark;
     }
     
 }//header

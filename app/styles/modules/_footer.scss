@@ -6,6 +6,8 @@ footer {
         color: darken($light, 20);
     }
     color: lighten($dark, 20);
+    font-family: $sansfont2;
+    font-size: .7em;
     text-align: center;
     
     .credit {
@@ -18,7 +20,7 @@ footer {
     
     @include deviceBreakpoint(small) {
         @extend %clearfix;
-        font-size: .7em;
+        font-size: .6em;
         line-height: 1.5;
         
         .copyright {
@@ -34,6 +36,6 @@ footer {
     }//small breakpoint
     
     @include deviceBreakpoint(medium) {
-        font-size: .8em;
+        font-size: .7em;
     }
 }
