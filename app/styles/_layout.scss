@@ -4,11 +4,12 @@
   .mHide, header p, #mainNav, #mainBanner {
     @include visuallyhidden;
   }
-  .desktop {display: none;}
+  .desktop, #mobileNav {display: none;}
+  #mobileNav.visible {display: block;}
 }//mobile breakpoint
 
 @include deviceBreakpoint(small) {
-  .mobile, #navToggle {
+  .mobile, #navToggle, #mobileNav {
     display: none;
   }
 }//small breakpoint

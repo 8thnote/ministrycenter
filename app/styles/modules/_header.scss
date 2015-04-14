@@ -10,7 +10,7 @@ header {
     
     @include deviceBreakpoint(small) {
         #wrapA & {
-            margin-bottom: 3em;
+            margin-bottom: 4em;
             padding: 2.4em 8% 0 12%;
             @include deviceBreakpoint(large) {
                 padding-left: 18%;
