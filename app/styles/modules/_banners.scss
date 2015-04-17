@@ -35,6 +35,11 @@
     @include deviceBreakpoint(mobile) {
         margin-left: -($mobilePadding + 1%);
         margin-right: -($mobilePadding + 1%);
+        text-align: center;
+        
+        .mWrap {
+            display: inline-block;
+        }
     }
     padding: 1em 0 .7em 0;
     @include deviceBreakpoint(small) {
@@ -50,7 +55,6 @@
     $vPad: .7em;
     
     .imgWrap {
-        width: 50%;
         @include deviceBreakpoint(small) {
             width: 30%;
             margin-right: 3%;
@@ -66,21 +70,32 @@
             border: 3px solid darken($light, 20);
             border-radius: 50%;
             max-width: 100%;
+            filter: grayscale(.5);
+            transition: .5s -webkit-filter, .5s filter;
             @include deviceBreakpoint(mobile) {
                 height: 75px;
             }
+            @include deviceBreakpoint(small) {
+                filter: grayscale(.3);
+            }
+            &:hover {
+                filter: grayscale(0);
+            }
         }
     .cWrap {
-        width: 50%;
         padding-left: $vPad;
         @include deviceBreakpoint(small) {
             width: 65%;
         }
         float: left;
+        text-align: left;
     }
     h2 {
-        margin: .7em 0 .2em 0;
-        color: $light;
+        margin: .5em 0 .2em 0;
+        color: lighten($brown, 25);
+        @include deviceBreakpoint(small) {
+            color: $light;
+        }
         font-size: 1.3em;
     }
     p:first-of-type {
@@ -89,7 +104,10 @@
             margin-top: .4em;
         }
     }
-    a {color: darken($light, 15);
+    a {color: lighten($brown, 25);
+        @include deviceBreakpoint(small) {
+            color: darken($light, 15);
+        }
         &:hover {
             color: $light;
         }

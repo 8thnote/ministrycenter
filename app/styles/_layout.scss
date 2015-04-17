@@ -4,8 +4,11 @@
   .mHide, header p, #mainNav, #mainBanner {
     @include visuallyhidden;
   }
-  .desktop, #mobileNav {display: none;}
-  #mobileNav.visible {display: block;}
+  //.desktop, #mobileNav {max-height: 0; overflow: hidden; transition: .7s max-height ease-out;}
+  //#mobileNav.visible {max-height: 20em;}
+  
+  .desktop, #mobileNav {height: 1px; opacity: 0; overflow: hidden; transition: .7s opacity ease-out;}
+  #mobileNav.visible {height: auto; opacity: 1;}
 }//mobile breakpoint
 
 @include deviceBreakpoint(small) {

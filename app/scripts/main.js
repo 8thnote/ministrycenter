@@ -34,7 +34,7 @@ $(document).ready(function() {
  
 			// create a scene
 			myScene = new ScrollMagic.Scene({
-				offset: fontSizeNum * 10 // start this scene after scrolling for X distance in px
+				offset: 200 // start this scene after scrolling for X distance in px
 			})
 				.setPin("#mainNav")
 				.setClassToggle("body", "pinned") // pins the element for the the scene's duration
@@ -57,6 +57,7 @@ $(document).ready(function() {
 	$("#wrapA").append(mobileNav);
 	$("#navToggle").click(function(e) {
 		e.preventDefault();
+		$(this).toggleClass("active");
 		$("#mobileNav").toggleClass("visible");
 	});
 

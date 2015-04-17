@@ -10,7 +10,7 @@ header {
     
     @include deviceBreakpoint(small) {
         #wrapA & {
-            margin-bottom: 4em;
+            margin-bottom: 3em;
             padding: 2.4em 8% 0 12%;
             @include deviceBreakpoint(large) {
                 padding-left: 18%;
@@ -148,6 +148,9 @@ header {
         color: $darkBlue;
         font-size: .8em;
         //text-shadow: 1px 1px 1px $dark;
+        &.active {
+            color: lighten($darkBlue, 20);
+        }
     }
     
 }//header
