@@ -45,7 +45,7 @@ gulp.task('html', ['styles'], function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
+  return gulp.src('app/img/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true,
@@ -53,7 +53,7 @@ gulp.task('images', function () {
       // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
     })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('fonts', function () {
