@@ -61,26 +61,34 @@ $(document).ready(function() {
 		$("#mobileNav").toggleClass("visible");
 	});
 	
-	//Sun Loader
+	//Sun loader cloned from main sun in logo
 	var sunLoader = $("#mainSun").clone();
 	sunLoader.removeAttr("id").attr("id", "sunLoader");
 	
-	var sunLoaded;//only want to add sun once
+	var sunLoaded;//sun loader flag
 	
 	//Ajax Calls
 	$('#mainNav').on("click", "a", function(e) {
     	e.preventDefault();
     	var mainContent = $("#mainContent");
+    	//scroll to top
+    	$('html,body').animate({
+		    scrollTop: 0
+		}, 'medium');
+		//append sun only once
     	if (!sunLoaded) {
     		$("#wrapB").append(sunLoader).fadeIn();
     	} else {
     		sunLoader.fadeIn();
     	}
-    	//mainContent.append(sunLoader).show();
+		//highlight current nav item
     	$("#mainNav").find(".current").removeClass("current");
     	$(this).closest("li").addClass("current");
+    	//change url
         var target = $(this).attr('href');
-        window.location.hash = target;
+        var mcUrl = target.replace(".html", "");
+        window.location.hash = mcUrl;
+        //ajax request
         $.ajax({
             url: target,
             success: function(data) {
@@ -88,14 +96,14 @@ $(document).ready(function() {
                     .fadeOut('slow', function() {
                         $(this).html($(data).find("#mainContent").html()).fadeIn('slow', function() {
                         	sunLoader.fadeOut();
-                        	$('html,body').animate({
-							    scrollTop: 0
-							}, 'medium');
                         });
                     });
+            },
+            error: function() {
+            	sunLoader.fadeOut();
             }
         });
-        sunLoaded = true;
+        sunLoaded = true;//flag for sun loader graphic
         return false;
     });
 
