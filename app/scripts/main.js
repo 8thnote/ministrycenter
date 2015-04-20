@@ -1,5 +1,6 @@
 /* jshint devel:true */
 $(document).ready(function() {
+	"use strict";
 	function debounce(func, wait, immediate) {
 		var timeout;
 		return function() {
@@ -70,12 +71,13 @@ $(document).ready(function() {
 	//Ajax Calls
 	$('#mainNav').on("click", "a", function(e) {
     	e.preventDefault();
-    	var mainContent = $("#mainContent");
     	//scroll to top
     	$('html,body').animate({
 		    scrollTop: 0
 		}, 'medium');
 		//append sun only once
+		var mainSun = $("#mainSun");
+		mainSun.fadeOut();
     	if (!sunLoaded) {
     		$("#wrapB").append(sunLoader).fadeIn();
     	} else {
@@ -92,15 +94,18 @@ $(document).ready(function() {
         $.ajax({
             url: target,
             success: function(data) {
-               	mainContent
+               	$("#mainContent, #mainBanner")
                     .fadeOut('slow', function() {
-                        $(this).html($(data).find("#mainContent").html()).fadeIn('slow', function() {
+                    	$("#mainBanner").html($(data).find("#mainBanner")).fadeIn('slow');
+                        $("#mainContent").html($(data).find("#mainContent").html()).fadeIn('slow', function() {
                         	sunLoader.fadeOut();
+                        	mainSun.fadeIn(3000);
                         });
                     });
             },
             error: function() {
             	sunLoader.fadeOut();
+            	mainSun.fadeIn(3000);
             }
         });
         sunLoaded = true;//flag for sun loader graphic

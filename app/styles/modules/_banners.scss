@@ -3,6 +3,9 @@
         height: 12em;
         position: relative;
         background: url("../img/home-main.jpg") 50% 50% no-repeat;
+        &.hours {
+            background: url("../img/hours.jpg") 50% 50% no-repeat;
+        }
         background-size: cover;
         
         p {
