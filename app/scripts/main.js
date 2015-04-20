@@ -60,5 +60,43 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 		$("#mobileNav").toggleClass("visible");
 	});
+	
+	//Sun Loader
+	var sunLoader = $("#mainSun").clone();
+	sunLoader.removeAttr("id").attr("id", "sunLoader");
+	
+	var sunLoaded;//only want to add sun once
+	
+	//Ajax Calls
+	$('#mainNav').on("click", "a", function(e) {
+    	e.preventDefault();
+    	var mainContent = $("#mainContent");
+    	if (!sunLoaded) {
+    		$("#wrapB").append(sunLoader).fadeIn();
+    	} else {
+    		sunLoader.fadeIn();
+    	}
+    	//mainContent.append(sunLoader).show();
+    	$("#mainNav").find(".current").removeClass("current");
+    	$(this).closest("li").addClass("current");
+        var target = $(this).attr('href');
+        window.location.hash = target;
+        $.ajax({
+            url: target,
+            success: function(data) {
+               	mainContent
+                    .fadeOut('slow', function() {
+                        $(this).html($(data).find("#mainContent").html()).fadeIn('slow', function() {
+                        	sunLoader.fadeOut();
+                        	$('html,body').animate({
+							    scrollTop: 0
+							}, 'medium');
+                        });
+                    });
+            }
+        });
+        sunLoaded = true;
+        return false;
+    });
 
-});
+});//document ready

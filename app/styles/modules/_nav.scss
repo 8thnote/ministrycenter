@@ -62,6 +62,22 @@
     &.stacked li:hover {
       transform: translateX(.5em);
     }
+    &.stacked li.current {
+      transform: translateX(.8em);
+      
+      &:hover {
+        transform: translateX(.8em);
+      }
+      a {
+        cursor: default;
+      }
+      a:before {
+        filter: grayscale(0);
+      }
+      a:after {
+        border-color: $brown;
+      }
+    }//li current
   
   &.squares li {
    width: 50%;

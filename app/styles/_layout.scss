@@ -11,6 +11,9 @@
   #mobileNav.visible {height: auto; opacity: 1;}
 }//mobile breakpoint
 
+#wrapB {position: relative;}
+#wrapB #sunLoader {position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 10;}
+
 @include deviceBreakpoint(small) {
   .mobile, #navToggle, #mobileNav {
     display: none;

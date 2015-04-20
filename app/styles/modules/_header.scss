@@ -97,45 +97,14 @@ header {
         }
     }
     
-    @include deviceBreakpoint(small) {
-        .sun { 
-        	position: absolute; 
-        	width: 490px; 
-        	height: 490px; 
-        	top: -227px; right: -191px;
-        	z-index: -1;
-            
-            .core { 
-            	width: 80px; 
-            	height: 80px; 
-            	background-color: #E8E87A; 
-            	display: block;
-            	border-radius: 50%;
-            	position: absolute; 
-            	top: 205px; left: 205px;
-            }
-            .rays	{
-            	background: url("../img/rays.png") 0 0 no-repeat;
-            	opacity: .5;
-            	position: absolute; 
-            	top: 0; 
-            	left: 0; 
-            	width: 490px; 
-            	height: 490px;
-            	
-            	/* microsoft ie */
-            	animation-name: spin; 
-            	animation-duration: 100000ms; /* 40 seconds */
-            	animation-iteration-count: infinite; 
-            	animation-timing-function: linear;
-            	
-            	&:hover {
-            	/* animation-duration: 10000ms; 10 seconds - speed it up on hover! */
-            	/* resets the position though!  sucks */
-                }
-            }//rays
-        }//sun
-    }//small breakpoint
+    .sun {
+        display: none;
+        @include deviceBreakpoint(small) {
+            display: block;
+            top: -227px; right: -191px;
+	        z-index: -1;
+        }
+    }//sun
     
     #navToggle {
         @include abs-pos(auto, 5%, 1.5em, auto);
