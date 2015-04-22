@@ -67,13 +67,15 @@ a[href^=tel] {
 }
 
 /* style classes */
-.callout {
+blockquote {
+  margin: 0;
   padding: 1em;
   border-radius: 5px;
   background: $darkGreen;
-  color: $light;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-}
-  .callout em {
-    font-style: normal;
+  
+  p {
+    margin: 0;
+    color: $light;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
+}
