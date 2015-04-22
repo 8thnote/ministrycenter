@@ -13,14 +13,6 @@ h1,h2,h3,h4,h5,h6 {
  margin-top: 1.4em;
 }
 
-h1.top, h2.top, h3.top {
-  margin-top: .4em;
-  
-  @include deviceBreakpoint(small) {
-    margin-top: .8em;
-  }
-}
-
 p {
   font-weight: $normal;
   margin-bottom: .8em;
