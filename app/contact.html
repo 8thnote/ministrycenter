@@ -56,13 +56,14 @@
         
         <div id="mainContent">
           <h1 class="top">Contact Us</h1>
-          <p>Phone<br><strong><a href="tel:19185855310">918-585-5310</a></strong></p>
-          <p>Address<br>
+          <p class="indent"><i class="fa fa-mobile-phone"></i> Phone<br><strong><a href="tel:19185855310">918-585-5310</a></strong></p>
+          <p class="indent"><i class="fa fa-location-arrow"></i> Address<br>
             <strong>312 South 33rd West Avenue</strong><br>
             <strong>Tulsa, OK 74127</strong>
           </p>
-          <form id="contact-form" accept-charset="UTF-8" action="http://formspree.io/helmwebdesigns@gmail.com" method="POST">
-            <h2>Email us with questions or to join our mailing list</h2>
+          <form id="contact-form" accept-charset="UTF-8" action="https://formspree.io/helmwebdesigns@gmail.com" method="POST">
+            <h2>Email Us</h2>
+            <p>Feel free to email us with questions, or let us know if you're interested in volunteering.</p>
             <div>
               <label>
                 <span>Name: <span class="sm">(required)</span></span>
@@ -85,6 +86,17 @@
               <label>
                 <span>Message: <span class="sm">(required)</span></span>
                 <textarea placeholder="Your message" name="message" required></textarea>
+              </label>
+            </div>
+            <div class="horizontal">
+              <p class="no-pad">Join Our Mailing List?</p>
+              <label>
+                <span>Yes</span>
+                <input name="mailing" type="radio" value="I want to join the mailing list" checked="checked">
+              </label>
+              <label>
+                <span>No</span>
+                <input name="mailing" type="radio" value="Please do not add me to the mailing list">
               </label>
             </div>
             <div>

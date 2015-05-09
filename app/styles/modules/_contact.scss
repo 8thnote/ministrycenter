@@ -1,3 +1,10 @@
+.indent {position: relative; padding-left: 2em;}
+.fa {
+	position: absolute;
+	top: 0; left: 0;
+	color: $darkBlue;
+	font-size: 1.5em;
+}
 label {display: block; margin: 1em 0;line-height: 1;}
 label span {display: block; margin-bottom: .5em;}
 label span.sm {
@@ -5,6 +12,19 @@ label span.sm {
 	color: lighten($dark, 20);
 	font-size: .7em;
 }
+#contact-form .no-pad {
+	margin: 0;
+}
+#contact-form .horizontal {
+	@extend %clearfix;
+	
+	label {
+		float: left;
+		margin-right: .7em;
+	}
+	span, input {display: inline; vertical-align: middle; cursor: pointer;}
+}
+
 button {display: block; margin-top: 1em;}
 
 
