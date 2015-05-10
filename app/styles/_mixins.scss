@@ -32,7 +32,10 @@
 
 //BREAKPOINTS
 @mixin deviceBreakpoint($point) {
-  @if $point == large {
+  @if $point == xlarge {
+    @media (min-width: 72em) { @content; }
+  }
+  @else if $point == large {
     @media (min-width: 64.375em) { @content; }
   }
   @else if $point == medium {

@@ -20,6 +20,7 @@ p {
 
 a {
   color: $darkGreen;
+  transition: .3s color;
   
   &:hover {
     color: darken($darkGreen, 10);
@@ -33,7 +34,9 @@ strong {
   font-weight: $bold;
 }
 
-
+address {
+  font-style: normal;
+}
 
 /*tel link*/
 a[href^=tel] {

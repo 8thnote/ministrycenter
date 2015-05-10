@@ -10,7 +10,7 @@ header {
     
     @include deviceBreakpoint(small) {
         #wrapA & {
-            margin-bottom: 3em;
+            margin-bottom: 3.5em;
             padding: 2.4em 8% 0 12%;
             @include deviceBreakpoint(large) {
                 padding-left: 18%;
@@ -98,9 +98,9 @@ header {
     }
     
     .sun {
-        display: none;
+        display: none !important;//overrides jQuery hiding/showing
         @include deviceBreakpoint(small) {
-            display: block;
+            display: block !important;//overrides mobile
             top: -227px; right: -191px;
 	        z-index: -1;
         }

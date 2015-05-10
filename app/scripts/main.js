@@ -18,7 +18,7 @@ $(document).ready(function() {
 	}; //debounce fn
  
     var initialized = false;
-    var myScene;
+    var myScene, smallLogo;
     
 	var myResize = function() {
 	    var el = document.getElementById('mainWrap');
@@ -27,23 +27,41 @@ $(document).ready(function() {
     	var widthPx = window.getComputedStyle(el, null).getPropertyValue('width');
     	var layoutWidthNum = parseFloat(widthPx);
     	var layoutEmNum = layoutWidthNum / fontSizeNum;
-    	var mobileBreakpoint = 35.85;
+    	var mobileBreakpoint = 37.5;
 	    
 		if (!Modernizr.touch && layoutEmNum >= mobileBreakpoint && !initialized) {
 			// init controller
 			var controller = new ScrollMagic.Controller();
  
-			// create a scene
+			// pinned side navigation
 			myScene = new ScrollMagic.Scene({
 				offset: 200 // start this scene after scrolling for X distance in px
 			})
 				.setPin("#mainNav")
 				.setClassToggle("body", "pinned") // pins the element for the the scene's duration
 			.addTo(controller); // assign the scene to the controller
+			
+			// parallax background
+			/* needs improvement to use in production
+			var tween = TweenMax.staggerFromTo("#mainBackground", 5, {backgroundPosition: "0 0"}, {backgroundPosition: "0 100px"});								
+		    var bgParallax = new ScrollMagic.Scene({duration: 500})
+		    .setTween(tween)
+		    .addTo(controller);
+		    */
+		    
+			
+			//create small logo on desktop
+			smallLogo = $('<h3 id="smallLogo"><a href="index.html">the ministry center</a></h3>');
+			$("#mainNav").prepend(smallLogo);
+			
 			initialized = true;
 		} else {
 		    if (myScene && layoutEmNum < mobileBreakpoint) {
 			    myScene.removePin(true);
+			    
+			    //remove small logo
+		    	$("#smallLogo").remove();
+		    	
 			    initialized = false;
 		    }
 		}

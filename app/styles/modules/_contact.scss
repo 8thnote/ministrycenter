@@ -1,9 +1,19 @@
-.indent {position: relative; padding-left: 2em;}
-.fa {
-	position: absolute;
-	top: 0; left: 0;
-	color: $darkBlue;
-	font-size: 1.5em;
+.indent {
+	position: relative; padding-left: 2em;
+	h2 {
+	  font-size: 1.1em;
+	  margin-bottom: 0;
+	}
+	.fa.main {
+		position: absolute;
+		top: 0; left: 0;
+		color: $darkBlue;
+		font-size: 1.5em;
+	}
+	.fa-external-link {
+		margin-left: .3em;
+		font-size: .7em;
+	}
 }
 label {display: block; margin: 1em 0;line-height: 1;}
 label span {display: block; margin-bottom: .5em;}
@@ -84,7 +94,7 @@ button {display: block; margin-top: 1em;}
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background: orange;
+	background: $orange;
 	box-shadow: 0 0 0 0 rgba(255, 255, 255, .5) inset;
 	color:#FFF;
 	padding:10px;

@@ -22,6 +22,7 @@
     <!-- endbuild -->
   </head>
   <body>
+    <div id="mainBackground">
     <!--[if lt IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -56,11 +57,20 @@
         
         <div id="mainContent">
           <h1 class="top">Contact Us</h1>
-          <p class="indent"><i class="fa fa-mobile-phone"></i> Phone<br><strong><a href="tel:19185855310">918-585-5310</a></strong></p>
-          <p class="indent"><i class="fa fa-location-arrow"></i> Address<br>
-            <strong>312 South 33rd West Avenue</strong><br>
-            <strong>Tulsa, OK 74127</strong>
-          </p>
+          <div class="indent">
+            <i class="fa fa-mobile-phone main"></i>
+            <h2>Phone</h2>
+            <a href="tel:19185855310">918-585-5310</a>
+          </div>
+          <div class="indent">
+            <i class="fa fa-location-arrow main"></i>
+            <h2>Address</h2>
+            <address>
+              312 South 33rd West Avenue<br>
+              Tulsa, OK 74127
+            </address>
+            <a href="https://www.google.com/maps/place/312+S+33rd+W+Ave,+Tulsa,+OK+74127/@36.152431,-96.029562,17z/data=!3m1!4b1!4m2!3m1!1s0x87b6eaff21d9f745:0xcc6c3168c53129f2">Google Map</a> <i class="fa fa-external-link"></i>
+          </div>
           <form id="contact-form" accept-charset="UTF-8" action="https://formspree.io/helmwebdesigns@gmail.com" method="POST">
             <h2>Email Us</h2>
             <p>Feel free to email us with questions, or let us know if you're interested in volunteering.</p>
@@ -134,6 +144,8 @@
         </footer>
       </section>
     </div><!-- mainWrap -->
+    
+    </div><!-- mainBackground -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -142,7 +154,7 @@
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+      ga('create','UA-62801918-1');ga('send','pageview');
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -151,6 +163,9 @@
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.0/plugins/animation.gsap.js"></script>
+
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
