@@ -98,9 +98,9 @@ header {
     }
     
     .sun {
-        display: none !important;//overrides jQuery hiding/showing
+        display: none;
         @include deviceBreakpoint(small) {
-            display: block !important;//overrides mobile
+            display: block;
             top: -227px; right: -191px;
 	        z-index: -1;
         }

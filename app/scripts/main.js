@@ -54,6 +54,8 @@ $(document).ready(function() {
 			smallLogo = $('<h3 id="smallLogo"><a href="index.html">the ministry center</a></h3>');
 			$("#mainNav").prepend(smallLogo);
 			
+			$("#mainSun").css("opacity", "1");
+			
 			initialized = true;
 		} else {
 		    if (myScene && layoutEmNum < mobileBreakpoint) {
@@ -63,6 +65,7 @@ $(document).ready(function() {
 		    	$("#smallLogo").remove();
 		    	
 			    initialized = false;
+			    $("#mainSun").css("opacity", "0");
 		    }
 		}
 	}; //myResize
