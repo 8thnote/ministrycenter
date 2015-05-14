@@ -35,13 +35,14 @@
       margin: 0; padding-left: 13%;
       position: absolute;
       width: 100%;
-      top: -4em; left: 0;
+      top: -1.4em; left: 0;
+      transform: translateY(-4em);
       opacity: 0;
       font-size: .8em;
-      transition: 1s opacity, 1s top;
+      transition: 1s opacity, 1s transform;
       .pinned & {
         opacity: 1;
-        top: -.7em;
+        transform: translateY(0);
       }
       a {
         display: inline-block;
@@ -59,14 +60,20 @@
     @include deviceBreakpoint(large) {
       padding-left: 18%;
       font-size: 1em;
+      top: -1em;
+      /*
       .pinned & {
-        top: -1.2em;
+        transform: translateY(-1.2em);
       }
+      */
     }//large breakpoint
     @include deviceBreakpoint(xlarge) {
+      top: -2.5em;
+      /*
       .pinned & {
-        top: -1.8em;
+        transform: translateY(-1.8em);
       }
+      */
     }
   }//small logo
   
